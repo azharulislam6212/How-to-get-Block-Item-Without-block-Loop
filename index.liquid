@@ -1,0 +1,7 @@
+
+                    {% assign index = 0 %}
+                    {%- for link in section.settings.category_menu.links -%}
+                    {% assign icon =  section.blocks[index].settings.svg_icon  %}
+                    {%- endif -%}
+                    {% assign index = index | plus: 1 %}
+                    {%- endfor -%}
