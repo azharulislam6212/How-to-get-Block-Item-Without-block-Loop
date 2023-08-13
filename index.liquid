@@ -1,7 +1,17 @@
 
                     {% assign index = 0 %}
+     /same section blocks items
                     {%- for link in section.settings.category_menu.links -%}
                     {% assign icon =  section.blocks[index].settings.svg_icon  %}
                     {%- endif -%}
                     {% assign index = index | plus: 1 %}
+                    {%- endfor -%}
+
+
+                /same blocks items
+                  {% assign index = 1 %}
+                    {%- for link in section.settings.category_menu.links -%}
+                   {% assign svg_icon = index | prepend: 'svg_icon_'  %}
+                      {% assign icon = block.settings[svg_icon] %}
+             {% assign index = index | plus: 1 %}
                     {%- endfor -%}
