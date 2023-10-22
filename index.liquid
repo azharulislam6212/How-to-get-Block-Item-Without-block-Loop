@@ -15,3 +15,18 @@
                       {% assign icon = block.settings[svg_icon] %}
              {% assign index = index | plus: 1 %}
                     {%- endfor -%}
+
+
+          {% assign count = 1 %}
+                {%- for childlink in link.links -%}
+
+                  {%- capture svg_icon -%}svg_icon_{{ count }}{%- endcapture -%}
+                  {% assign icon = section.blocks[index].settings[svg_icon] %}
+
+
+          {{icon}}
+    {% assign count = count | plus: 1 %}
+   {%- endfor -%}
+
+
+
